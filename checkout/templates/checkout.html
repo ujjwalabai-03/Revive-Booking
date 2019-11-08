@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Checkout{% endblock %}
+{% block body %}
+	<div class="container checkout_box">
+		<div class="row" id="selections">
+			<div class="card mb-1 mycard mycard_bg" style="width: 100%">
+				<div class="row no-gutters">
+					<div class="card-body">
+						<h2 class="card-title" style="font-weight:bolder">{{hotel_name}}</h2>
+						<p><li>Hotel base price ₹{{hotel_name.price}}</li></p>
+						<p><li>{{room.room_type}} price ₹{{room.price}}</li></p>
+						<p><li>{{option.choice}} price ₹{{option.price}}</li></p>
+						<p><li>Accomodation</li></p>
+						<h3><span style="font-size:20px;">₹</span><strong> {{total_price}}</strong>/<span style="font-size:20px;">night</span></h3>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="row">
+			<div class="col col-md-2"></div>
+			<div class="col col-md-8 ">
+				<div class="payment_info">
+				<h3>Select Payment Option</h3>
+				<hr>
+				<form action="/card_payment/" method="POST" id="payment_form">
+				{% csrf_token %}
+					<br>
+					<input type="radio" name="payment" value="card_payment" onclick="card()" id="card_payment">
+					<label>Card</label>
+					<br><br>
+					<input type="radio" name="payment" value="net_banking" onclick="net()" id="net_banking">
+					<label>Net Banking</label>
+					<br><br>
+				</div>
+				<br>
+				<div class="user_info">
+					<h3>User Information</h3><hr><br>
+					<label>Name</label><br>
+					<input type="text" name="customer_name" required><br><br>
+					<label>Phone no</label><br>
+					<input type="text" name="customer_phone" required><br><br>
+					<label>Email ID</label><br>
+					<input type="email" name="customer_email" required><br><br>
+					</div>
+				<br><br>
+				<button class="btn btn-primary" type="submit" id="choice_btn" style="border-radius: 5px;">Submit</button>
+				<br><br>
+				</div>
+				</form>	
+			</div>
+			<div class="col col-md-2"></div>	
+		</div>
+	</div>
+	<script type="text/javascript">
+    function net() {
+       document.getElementById("payment_form").action = '/net_banking/';
+        }
+    function card() {
+       document.getElementById("payment_form").action = '/card_payment/';
+        }    
+</script>
+{% endblock %}

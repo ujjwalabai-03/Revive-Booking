@@ -1,0 +1,110 @@
+body{
+	background: #0d0e3c;
+	color: #ccc;
+	font-family: 'Roboto', sans-serif;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+nav {
+	/*background-color: #5a54b7;*/
+	background-color: transparent;
+}
+
+.navbar-brand{
+	text-align: center; 
+	float: none;
+	font-family: 'Satisfy', cursive; 
+	font-size: 35px;
+	padding-top: 0px;
+	padding-bottom:0px;
+}
+
+#suggestions a,
+#hotel_list a {
+	text-decoration: none;
+}
+
+#card_payment_div{
+	max-width: 30rem; 
+	margin: 10px;
+	margin-left: 430px;
+}
+
+.hero {
+	height: 60vh;
+	margin-top: 40px;
+}
+
+.hero-head {
+	height: 60vh;
+	flex-direction: column;
+	align-items: flex-start;
+	padding-left: 120px;
+}
+
+.hero-img {
+	height: 60vh;
+}
+
+.hero-head h1 {
+	font-size: 48px;
+	font-weight: 700;
+}
+
+.hero-head h4 {
+	font-size: 24px;
+	font-weight: 500;
+}
+
+.home-city-section {
+	margin-top: 60px;
+}
+
+.city-card-body,
+.hotel-card-body{
+	margin-left: -30px;
+}
+
+.detail-card-body{
+	margin-top: -30px;
+	background: #555;
+	color:#555;
+}
+.pill {
+	padding: 6px;
+	border-radius: 5px;
+}
+
+#hotel_detail,
+#selections,
+#card_payment_div,
+#exampleModalLabel{
+	color:#555;
+	border-radius: 8px;
+}
+.user_info,
+.payment_info{
+	border:1px;
+	padding: 30px;
+	border:thin solid #555;
+	border-radius: 8px;
+}
+
+.mycard{
+	box-shadow: 0 4px 8px 0 #593196;
+	border-radius: 8px;
+}
+
+.mycard_bg{
+	background-color: #d1c5e2;
+}
+
+#mytable td,
+#mytable th{
+    border: none;
+}

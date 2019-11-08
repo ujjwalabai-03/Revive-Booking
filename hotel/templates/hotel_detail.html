@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% block title %}Hotel Details{% endblock %}
+{% load static %}
+{% block body %}
+<div class="container" id="hotel_detail">
+	
+</div>
+<br>
+<hr>
+<br>
+<div class="container">
+	<h3 style="font-weight:bolder">Select Room & Meal option</h3>
+	<!-- <h5>{{room.room_type}} <span>{{room.description}}</span></h5> -->
+	<form action="/checkout/" method="POST" id="checkout_form">
+	{% csrf_token %}
+	<div id="room_detail">
+		<table class="table table-hover table-primary mycard" id="mytable">
+		  <thead>
+			<tr>
+			<th scope="col"></th>
+			  <th scope="col">Room Type</th>
+			  <th scope="col">Description</th>
+			  <th scope="col">Price</th>
+			</tr>
+		  </thead>
+		  <tbody id="room-body">
+		  </tbody>	
+		</table>
+		<table class="table table-hover table-primary mycard"  id="mytable">
+		  <thead>
+			<tr>
+			<th scope="col"></th>
+			  <th scope="col">Option</th>
+			  <th scope="col">Choice</th>
+			  <th scope="col">Additonal Price</th>
+			</tr>
+		  </thead>
+		  <tbody id="option-body">
+		  </tbody>	
+		</table>
+		<br><br>
+		<button class="btn btn-primary" type="submit" id="choice-btn" style="border-radius: 5px;">Submit</button>
+		<br><br>
+		</div>
+	</form>
+</div>
+<script src="/static/owl.carousel.min.js"></script>
+<script src="{% static 'cookie.js' %}"></script>
+<script src="{% static 'hotel.js' %}"></script>
+<script src="{% static 'detail.js' %}"></script>
+{% endblock %}

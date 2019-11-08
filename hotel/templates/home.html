@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home Page{% endblock %}
+{% block body %}
+<br>
+<div class="container">
+	<div class="hero">
+		<div class="row">
+			<div class="col-md-6" data-aos="zoom-out"data-aos-duration="1500"
+					data-aos-easing="ease-in-sine">
+				<div class="hero-head flex">
+				<h1>Welcome to Revive</h1>
+				<h4>Your Hotel Booking App</h4>
+				</div>
+			</div>
+			<div class="col-md-6" data-aos="zoom-out"data-aos-duration="1500"
+					data-aos-easing="ease-in-sine">
+				<div class="hero-img flex">
+				<img src="{% static 'hero.svg' %}" width="400px">
+				</div>
+			</div>	
+		</div>
+	</div>
+	<div class="home-city-section">
+		<div class="row" data-aos="flip-up"data-aos-duration="1500">
+			<div class="col col-md-8">
+				<div class="container" id="suggestions">
+				</div>
+			</div>
+			<div class="col col-md-3">
+				<input type="text" class="form-control mr-sm-2" name="city" placeholder="Search your city here..." required style="border-radius: 5px;">
+				<br><button class="submit btn btn-primary"style="border-radius: 5px;">Search</button>
+			</div>
+		</div>
+	</div>
+</div>
+<script src="{% static 'city.js' %}"></script>
+{% endblock %}

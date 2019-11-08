@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Net Banking{% endblock %}
+{% block body %}
+<form action="/net_success_page/" method="POST">
+	{% csrf_token %}
+	<div class="card text-dark bg-secondary mb-3 mycard" id="card_payment_div">
+		<div class="card-header" style="text-align: center;">
+		  	<h3>Select Bank for Net Banking</h3>
+		  </div>
+		  <div class="card-body">
+			<input type="radio" name="bank" value="SBI">SBI<br>
+			<input type="radio" name="bank" value="Canara">Canara<br>
+			<input type="radio" name="bank" value="HDFC">HDFC<br>
+			<input type="radio" name="bank" value="Bank of Baroda">Bank of Baroda<br>
+			<input type="radio" name="bank" value="Kotak">Kotak<br>
+			<br><br>
+	  		<h3>Login to Bank</h3><br>
+			<input type="text" name="username" placeholder="username"><br><br>
+			<input type="password" name="password" placeholder="password"><br><br>
+			<button class="btn btn-primary" type="submit" id="login_success" style="border-radius: 5px;">Login</button>
+		</div>
+	</div>
+</form>	
+{% endblock %}
